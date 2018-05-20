@@ -4,6 +4,11 @@ import './App.css';
 import CurrentWeatherTile from './components/CurrentWeatherTile';
 import ForecastWeatherTile from './components/ForecastWeatherTile';
 
+const getWeatherDataToDisplay = (weatherData) => {
+    for(let i = 0; i < weatherData.length; i++) {
+        weatherData.splice(i+1,1)
+    }
+}
 
 class App extends Component {
     constructor() {
@@ -18,7 +23,10 @@ class App extends Component {
             e.preventDefault()
             this.setState({city: this.state.searchedCity})
             fetch('http://api.openweathermap.org/data/2.5/forecast?q=' + this.state.searchedCity + '&APPID=0de64b18e7da2d5a45857d165125c350')
-                .then(response => response.json()).then(weatherData => this.setState({weatherData: weatherData.list}))
+                .then(response => response.json()).then(weatherData => {
+                getWeatherDataToDisplay(weatherData.list)
+                this.setState({weatherData: weatherData.list})
+                })
         }
 
         this.handleChange = (e) => {
@@ -28,7 +36,10 @@ class App extends Component {
 
     componentDidMount() {
         fetch('http://api.openweathermap.org/data/2.5/forecast?q=' + this.state.searchedCity + '&APPID=0de64b18e7da2d5a45857d165125c350')
-            .then(response => response.json()).then(weatherData => this.setState({weatherData: weatherData.list}))
+            .then(response => response.json()).then(weatherData => {
+                getWeatherDataToDisplay(weatherData.list)
+                this.setState({weatherData: weatherData.list})
+            })
     }
 
     render() {
@@ -45,7 +56,9 @@ class App extends Component {
                         <button type="submit">Search</button>
                         </form>
                         <CurrentWeatherTile weatherData={this.state.weatherData[0]}/>
-                        <ForecastWeatherTile weatherData={this.state.weatherData}/>
+                        {this.state.weatherData.map((element,index) =>
+                           index > 0 ? <ForecastWeatherTile weatherData={element} key={index}/> :''
+                        )}
                     </div>
                 }
             </div>
