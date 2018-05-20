@@ -1,0 +1,8 @@
+.current-weather-icon {
+    font-size: 8em;
+}
+
+.current-weather-item {
+    display: block;
+    width: 100%;
+}

@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
 
-import CurrentWeatherTile from './components/CurrentWeatherTile';
-import ForecastWeatherTile from './components/ForecastWeatherTile';
+import CurrentWeatherTile from '../CurrentWeatherTile/CurrentWeatherTile';
+import ForecastWeatherTile from '../ForecastWeatherTile/ForecastWeatherTile';
 
 const getWeatherDataToDisplay = (weatherData) => {
     for(let i = 0; i < weatherData.length; i++) {

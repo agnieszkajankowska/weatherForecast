@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {getWeatherIcon} from "../helpers";
+import {getWeatherIcon} from "../../helpers";
 
 class ForecastWeatherTile extends React.Component {
     render() {
