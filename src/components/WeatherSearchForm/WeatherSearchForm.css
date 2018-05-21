@@ -1,5 +1,15 @@
-
-.weather-search {
-    text-align: center;
+.weather-search.form-inline {
+    justify-content: center;
     margin-bottom: 40px;
+}
+
+.weather-search input {
+    margin-right: 5px;
+}
+
+@media (max-width: 570px) {
+    .weather-search button {
+        display: block;
+        margin: 10px auto;
+    }
 }

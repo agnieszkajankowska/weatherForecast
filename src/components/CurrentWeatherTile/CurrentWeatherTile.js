@@ -16,29 +16,29 @@ class CurrentWeatherTile extends React.Component {
         return (
             <Container className="current-weather-container">
                 <Row>
-                    <Col sm={12} md={4}>
+                    <Col sm={12} md={4} className="current-weather-icon-container">
                         <span className={`current-weather-icon ${getWeatherIcon(this.props)}`}></span>
                     </Col>
-                    <Col sm={12} md={4}>
-                        <span className="current-weather-item">{temperature}<span className="wi wi-celsius"/></span>
-                        <span className="current-weather-item">{status}</span>
+                    <Col sm={12} md={4} className="main-weather-info-container">
+                        <span className="current-weather-item temperature">{temperature}<span className="wi wi-celsius"/></span>
+                        <span className="current-weather-item status">{status}</span>
                     </Col>
-                    <Col sm={12} md={4}>
+                    <Col sm={12} md={4} className="secondary-weather-info-container">
                             <span className="current-weather-item">
                                 <span className="wi wi-strong-wind"/>
                                 Wind speed {windSpeed}m/s
                             </span>
                             <span className="current-weather-item">
                                 <span className="wi wi-cloudy"/>
-                                Cloudiness {cloudiness} %
+                                Cloudiness {cloudiness}%
                             </span>
                         <span className="current-weather-item">
                             <span className="wi wi-smoke"/>
-                            Humidity {humidity} %
+                            Humidity {humidity}%
                             </span>
                         <span className="current-weather-item">
                             <span className="wi wi-barometer"></span>
-                            Pressure {pressure} hPa
+                            Pressure {pressure}hPa
                         </span>
                     </Col>
                 </Row>

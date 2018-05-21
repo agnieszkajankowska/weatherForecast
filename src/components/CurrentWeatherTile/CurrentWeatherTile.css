@@ -1,8 +1,51 @@
+.current-weather-container {
+    margin-bottom: 50px;
+    margin-top: 50px;
+    color:#fff;
+}
+
+.current-weather-icon-container {
+    text-align: right;
+}
+
+.main-weather-info-container {
+    text-align: center;
+}
+
+.secondary-weather-info-container span {
+    font-size: 18px;
+    line-height: 30px;
+    display: inline-block;
+}
+
+.secondary-weather-info-container .wi {
+    margin-right: 5px;
+}
+
 .current-weather-icon {
     font-size: 8em;
+    text-align: right;
 }
 
 .current-weather-item {
     display: block;
     width: 100%;
+}
+
+.temperature {
+    font-size: 50px;
+}
+
+.status {
+    font-size: 30px;
+}
+
+
+@media (max-width: 767px) {
+    .current-weather-icon-container,
+    .main-weather-info-container,
+    .secondary-weather-info-container {
+        text-align: center;
+        padding-bottom: 20px;
+    }
 }

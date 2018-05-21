@@ -1,0 +1,23 @@
+.forecast-weather-icon {
+    font-size: 60px;
+}
+
+.forecast-temperature {
+    font-size: 40px;
+}
+
+.forecast-wind-speed {
+    margin-top: 10px;
+}
+
+.card-header, .card-body {
+    text-align: center;
+}
+
+.weather-forecast-container {
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background: #e9ecef;
+}
