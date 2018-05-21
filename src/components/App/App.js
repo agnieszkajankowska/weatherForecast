@@ -3,6 +3,7 @@ import './App.css';
 import WeatherSearchForm from '../WeatherSearchForm/WeatherSearchForm'
 import CurrentWeatherTile from '../CurrentWeatherTile/CurrentWeatherTile';
 import ForecastWeatherTile from '../ForecastWeatherTile/ForecastWeatherTile';
+import { Jumbotron } from 'reactstrap'
 
 const getWeatherDataToDisplay = (weatherData) => {
     for(let i = 0; i < weatherData.length; i++) {
@@ -41,10 +42,12 @@ class App extends Component {
             <div>
                 {this.state.weatherData === null ? <div className="loader">Loader</div> :
                     <div className="App">
+                        <Jumbotron>
                         <header className="App-header">
                             <h1 className="App-title">Current weather in {this.state.city}</h1>
                         </header>
                         <WeatherSearchForm initialCity={this.state.city} onCityUpdated={this.searchWeather}/>
+                        </Jumbotron>
                         <CurrentWeatherTile weatherData={this.state.weatherData[0]}/>
                         {this.state.weatherData.map((element,index) =>
                            index > 0 ? <ForecastWeatherTile weatherData={element} key={index}/> :''
