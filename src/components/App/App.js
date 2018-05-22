@@ -52,7 +52,8 @@ class App extends Component {
                         <Container>
                             <Row>
                         {this.state.weatherData.map((element,index) =>
-                            index > 0 ? <Col xs="12" md="3" key={index}><ForecastWeatherTile weatherData={element} key={index}/></Col> :''
+                            index > 0 ? <Col xs="12" md="3" key={index
+                            }><ForecastWeatherTile weatherData={element} key={index}/></Col> :''
                         )}
                             </Row>
                         </Container>
