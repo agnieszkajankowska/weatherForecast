@@ -10,8 +10,6 @@ const fetchResponseJson = async (url) => {
     try {
         const response = await fetch(url)
         const responseJson = await response.json()
-        // You can introduce here an artificial delay, both Promises and async/await will wait until the function returns
-        // await sleep(DELAY_MS)
         return responseJson
     }
     catch (e) {
