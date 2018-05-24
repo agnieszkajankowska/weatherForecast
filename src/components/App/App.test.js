@@ -158,7 +158,7 @@ describe('mock the api call', () => {
     });
 
     it('passes first data set to CurrentWeatherTile component', async () => {
-        const responseJson = await fetchResponseJson(proxy + 'https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=Gdańsk&APPID=0de64b18e7da2d5a45857d165125c350');
+        const responseJson = await fetchResponseJson(proxy + 'http://api.openweathermap.org/data/2.5/forecast?q=Gdańsk&APPID=0de64b18e7da2d5a45857d165125c350');
         const app = shallow(<App/>);
         app.setState({weatherData: responseJson.list});
         expect(app.find('CurrentWeatherTile').prop('weatherData')).toEqual({
