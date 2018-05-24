@@ -19,7 +19,8 @@ class CurrentWeatherTile extends React.Component {
                         <span className={`current-weather-icon ${getWeatherIcon(this.props)}`}></span>
                     </Col>
                     <Col sm={12} md={4} className="main-weather-info-container">
-                        <span className="current-weather-item temperature">{temperature}<span className="wi wi-celsius"/></span>
+                        <span className="current-weather-item temperature">{temperature}<span
+                            className="wi wi-celsius"/></span>
                         <span className="current-weather-item status">{status}</span>
                     </Col>
                     <Col sm={12} md={4} className="secondary-weather-info-container">
@@ -27,7 +28,7 @@ class CurrentWeatherTile extends React.Component {
                                 <span className="wi wi-strong-wind"/>
                                 Wind speed {windSpeed}m/s
                             </span>
-                            <span className="current-weather-item">
+                        <span className="current-weather-item">
                                 <span className="wi wi-cloudy"/>
                                 Cloudiness {cloudiness}%
                             </span>
