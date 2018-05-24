@@ -6,8 +6,16 @@
 
 Then open http://localhost:3000/ to see app.
 
+Demo: https://agnieszkajankowska.github.io/weatherForecast/
+
 Tests
 1. Run ```npm test``` command in command line.
+
+Build
+1. Run```npm build``` command in command line.
+
+Remarks:
+1. The app was created starting with 'create-react-app'
 
 Possible improvements:
 1.Refactoring of the App.js component code
