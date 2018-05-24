@@ -11,6 +11,8 @@ const getWeatherDataToDisplay = (weatherData) => {
     }
 }
 
+const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+
 class App extends Component {
     constructor() {
         super()
@@ -22,7 +24,7 @@ class App extends Component {
 
         this.searchWeather = (newCity) => {
             this.setState({city: newCity})
-            fetch('http://api.openweathermap.org/data/2.5/forecast?q=' + newCity + '&APPID=0de64b18e7da2d5a45857d165125c350')
+            fetch(proxyUrl + 'http://api.openweathermap.org/data/2.5/forecast?q=' + newCity + '&APPID=0de64b18e7da2d5a45857d165125c350')
                 .then(response => response.json()).then(weatherData => {
                 getWeatherDataToDisplay(weatherData.list)
                 this.setState({weatherData: weatherData.list})
@@ -31,7 +33,7 @@ class App extends Component {
     }
 
     componentDidMount() {
-        fetch('http://api.openweathermap.org/data/2.5/forecast?q=' + this.state.city + '&APPID=0de64b18e7da2d5a45857d165125c350')
+        fetch(proxyUrl + 'http://api.openweathermap.org/data/2.5/forecast?q=' + this.state.city + '&APPID=0de64b18e7da2d5a45857d165125c350')
             .then(response => response.json()).then(weatherData => {
                 getWeatherDataToDisplay(weatherData.list)
                 this.setState({weatherData: weatherData.list})
