@@ -138,7 +138,7 @@ const fetchResponseJson = async (url) => {
     }
 }
 
-const proxy = 'http://cors-anywhere.herokuapp.com/';
+const proxy = 'https://cors-anywhere.herokuapp.com/';
 
 describe('mock the api call', () => {
     it('renders without crashing', () => {

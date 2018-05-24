@@ -11,7 +11,7 @@ const getWeatherDataToDisplay = (weatherData) => {
     }
 }
 
-const proxy = 'http://cors-anywhere.herokuapp.com/';
+const proxy = 'https://cors-anywhere.herokuapp.com/';
 
 class App extends Component {
     constructor() {
