@@ -22,7 +22,7 @@ class App extends Component {
 
         this.searchWeather = (newCity) => {
             this.setState({city: newCity})
-            fetch('https://api.openweathermap.org/data/2.5/forecast?q=' + newCity + '&APPID=0de64b18e7da2d5a45857d165125c350')
+            fetch('https://cors-anywhere.herokuapp.com/http://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=' + newCity + '&APPID=0de64b18e7da2d5a45857d165125c350')
                 .then(response => response.json()).then(weatherData => {
                 getWeatherDataToDisplay(weatherData.list)
                 this.setState({weatherData: weatherData.list})

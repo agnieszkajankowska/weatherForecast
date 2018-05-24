@@ -28,21 +28,21 @@ describe('mock the api call', () => {
     });
 
     it('passes initialCity to WeatherForm component', async () => {
-        const responseJson = await fetchResponseJson('https://api.openweathermap.org/data/2.5/forecast?q=Gdańsk&APPID=0de64b18e7da2d5a45857d165125c350');
+        const responseJson = await fetchResponseJson('https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=Gdańsk&APPID=0de64b18e7da2d5a45857d165125c350');
         const app = shallow(<App />);
         app.setState({weatherData: responseJson.list});
         expect(app.find('WeatherSearchForm').prop('initialCity')).toEqual("Gdańsk");
     });
 
     it('passes first data set to CurrentWeatherTile component', async () => {
-        const responseJson = await fetchResponseJson('https://api.openweathermap.org/data/2.5/forecast?q=Gdańsk&APPID=0de64b18e7da2d5a45857d165125c350');
+        const responseJson = await fetchResponseJson('https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=Gdańsk&APPID=0de64b18e7da2d5a45857d165125c350');
         const app = shallow(<App />);
         app.setState({weatherData: responseJson.list});
         expect(app.find('CurrentWeatherTile').prop('weatherData')).toEqual({"dt":1526828400,"main":{"temp":287.82,"temp_min":286.777,"temp_max":287.82,"pressure":1037.47,"sea_level":1042.14,"grnd_level":1037.47,"humidity":80,"temp_kf":1.05},"weather":[{"id":800,"main":"Clear","description":"clear sky","icon":"01d"}],"clouds":{"all":0},"wind":{"speed":5.16,"deg":50.0016},"sys":{"pod":"d"},"dt_txt":"2018-05-20 15:00:00"});
     });
 
     it('renders number of ForecastWeatherTile components equal to data list length', async () => {
-        const responseJson = await fetchResponseJson('https://api.openweathermap.org/data/2.5/forecast?q=Gdańsk&APPID=0de64b18e7da2d5a45857d165125c350');
+        const responseJson = await fetchResponseJson('https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=Gdańsk&APPID=0de64b18e7da2d5a45857d165125c350');
         const app = shallow(<App />);
         app.setState({weatherData: responseJson.list});
         expect(app.find('ForecastWeatherTile').length).toEqual(6);
