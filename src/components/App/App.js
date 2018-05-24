@@ -3,7 +3,7 @@ import './App.css';
 import WeatherSearchForm from '../WeatherSearchForm/WeatherSearchForm'
 import CurrentWeatherTile from '../CurrentWeatherTile/CurrentWeatherTile';
 import ForecastWeatherTile from '../ForecastWeatherTile/ForecastWeatherTile';
-import { Jumbotron, Container, Row, Col } from 'reactstrap'
+import { Jumbotron, Container, Row, Col, Alert } from 'reactstrap'
 
 const getWeatherDataToDisplay = (weatherData) => {
     for(let i = 0; i < weatherData.length; i++) {
@@ -16,7 +16,8 @@ class App extends Component {
         super()
         this.state = {
             weatherData: null,
-            city: 'Gdańsk'
+            city: 'Gdańsk',
+            error: false
         }
 
         this.searchWeather = (newCity) => {
@@ -25,7 +26,7 @@ class App extends Component {
                 .then(response => response.json()).then(weatherData => {
                 getWeatherDataToDisplay(weatherData.list)
                 this.setState({weatherData: weatherData.list})
-                })
+                }).catch(() => this.setState({error: true}))
         }
     }
 
@@ -34,13 +35,19 @@ class App extends Component {
             .then(response => response.json()).then(weatherData => {
                 getWeatherDataToDisplay(weatherData.list)
                 this.setState({weatherData: weatherData.list})
-            })
+            }).catch(() => this.setState({error: true}))
     }
 
     render() {
         return (
             <div>
-                {this.state.weatherData === null ? <div className="loader"></div> :
+                {this.state.error ?
+                    <Container>
+                    <Alert color="danger">
+                    There has been an error when loading the data. Try to refresh the page.
+                    </Alert>
+                    </Container> :
+                    (this.state.weatherData === null ? <div className="loader"></div> :
                     <div className="App">
                         <Jumbotron>
                         <header className="App-header">
@@ -58,7 +65,7 @@ class App extends Component {
                             </Row>
                         </Container>
                     </div>
-                }
+                )}
             </div>
         );
     }
