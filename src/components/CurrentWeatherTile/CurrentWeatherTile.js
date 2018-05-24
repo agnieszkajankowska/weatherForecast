@@ -32,7 +32,7 @@ class CurrentWeatherTile extends React.Component {
                                 Cloudiness {cloudiness}%
                             </span>
                         <span className="current-weather-item">
-                            <span className="wi wi-smoke"/>
+                            <span className="wi wi-humidity"/>
                             Humidity {humidity}%
                             </span>
                         <span className="current-weather-item">

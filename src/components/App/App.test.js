@@ -1,6 +1,6 @@
 import React from 'react';
 import App from './App';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import fetchMock from 'fetch-mock';
 import WeatherSearchForm from "../WeatherSearchForm/WeatherSearchForm";
 

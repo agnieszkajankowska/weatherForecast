@@ -40,7 +40,6 @@
     font-size: 30px;
 }
 
-
 @media (max-width: 767px) {
     .current-weather-icon-container,
     .main-weather-info-container,
