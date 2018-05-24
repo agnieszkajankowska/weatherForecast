@@ -1,4 +1,4 @@
-# Currency app
+# Weather app
 
 1. Clone repository to local folder.
 2. Run ```npm install``` command in command line.
