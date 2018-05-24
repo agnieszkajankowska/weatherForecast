@@ -12,7 +12,6 @@ class CurrentWeatherTile extends React.Component {
         const cloudiness = this.props.weatherData.clouds.all
         const humidity = this.props.weatherData.main.humidity
         const pressure = this.props.weatherData.main.pressure
-
         return (
             <Container className="current-weather-container">
                 <Row>

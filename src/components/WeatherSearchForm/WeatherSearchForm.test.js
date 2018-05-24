@@ -17,3 +17,14 @@ it('changes state editing city when typing in input to input value', () => {
     weatherSearchForm.find('Input').simulate('change', {target: {value: 'Paris'}})
     expect(weatherSearchForm.state('editingCity')).toEqual('Paris');
 });
+
+it('calls "handleSubmit()" on form submit', () => {
+    const weatherSearchForm = shallow(<WeatherSearchForm initialCity={"Gdańsk"} onCityUpdated={() => console.log('city updated')}/>);
+    const spy = jest.spyOn(weatherSearchForm.instance(), 'handleSubmit');
+    weatherSearchForm.update();
+    weatherSearchForm.find('Input').simulate('change', {target: {value: 'Paris'}})
+    weatherSearchForm.find('Form').simulate('submit', {preventDefault: () => {
+    }});
+    expect(spy).toHaveBeenCalled();
+});
+
