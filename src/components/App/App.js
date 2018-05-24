@@ -40,7 +40,7 @@ class App extends Component {
     render() {
         return (
             <div>
-                {this.state.weatherData === null ? <div className="loader">Loader</div> :
+                {this.state.weatherData === null ? <div className="loader"></div> :
                     <div className="App">
                         <Jumbotron>
                         <header className="App-header">
